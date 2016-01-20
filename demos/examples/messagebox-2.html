@@ -1,0 +1,31 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Confirm</h1>
+        Below is how to use a confirmation dialog
+    </div>
+    <div id="example_view"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<button class="wd-btn" onclick="message1()">Open Confirm 1</button>
+<button class="wd-btn" onclick="message2()">Open Confirm 2</button>
+
+<!--CODE-->
+<script>
+function message1() {
+    $.MsgBox.confirm('Confirm Title', 'Confirm message ?', function(btn) {
+        console.log(btn +' clicked');
+    });
+}
+
+function message2() {
+    $.MsgBox.confirm({
+        title: 'Confirm Title',
+        message: 'Confirm message ?',
+        fn: function(btn) {
+            console.log(btn +' clicked');
+        }
+    });
+}
+</script>

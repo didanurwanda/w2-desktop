@@ -1,0 +1,53 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Change Icon</h1>
+        Below is how to use change icon on dialog.
+    </div>
+    <div id="example_view"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<button class="wd-btn" onclick="message1()">Open Warning</button>
+<button class="wd-btn" onclick="message2()">Open Info</button>
+<button class="wd-btn" onclick="message3()">Open Error</button>
+<button class="wd-btn" onclick="message4()">Open Question</button>
+
+<!--CODE-->
+<script>
+function message1() {
+    $.MsgBox.show({
+        title: 'Warning Title',
+        message: 'Don\'t touch me!',
+        icon: $.MsgBox.WARNING
+    });
+}
+
+function message2() {
+    $.MsgBox.show({
+        title: 'Info Title',
+        message: 'Data successfully saved',
+        icon: $.MsgBox.INFO
+    });
+}
+
+function message3() {
+    $.MsgBox.show({
+        title: 'Error Title',
+        message: 'Data could not be saved',
+        icon: $.MsgBox.ERROR
+    });
+}
+
+function message4() {
+    $.MsgBox.show({
+        title: 'Question Title',
+        message: 'Are you sure want to quit?',
+        icon: $.MsgBox.QUESTION,
+        button: $.MsgBox.YESNO,
+        fn: function(btn) {
+            console.log(btn +' clicked');
+        }
+    });
+}
+</script>

@@ -1,0 +1,65 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Nested Layouts</h1>
+        If 6 panels are not enough for you, you can create nested layouts by assigning a layout to a panel. There is no limit how deep 
+        you can go, but be reasonable :). In the example below the nested layout is yellow.
+    </div>
+    <div id="example_view" class="bg"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<div id="layout" style="width: 100%; height: 400px;"></div>
+
+
+<div style="background: white">
+    <div style="height: 20px;"></div>
+
+    <span style="display: inline-block; width: 60px;"> Main: </span>
+    <button class="wd-btn" onclick="wd['layout'].toggle('top', window.instant)">Top</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('left', window.instant)">Left</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('right', window.instant)">Right</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('preview', window.instant)">Preview</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('bottom', window.instant)">Bottom</button>
+
+    <div style="height: 10px;"></div>
+
+    <span style="display: inline-block; width: 60px;"> Nested: </span>
+    <button class="wd-btn" onclick="wd['layout2'].toggle('top', window.instant)">Top</button>
+    <button class="wd-btn" onclick="wd['layout2'].toggle('left', window.instant)">Left</button>
+    <button class="wd-btn" onclick="wd['layout2'].toggle('right', window.instant)">Right</button>
+    <button class="wd-btn" onclick="wd['layout2'].toggle('preview', window.instant)">Preview</button>
+    <button class="wd-btn" onclick="wd['layout2'].toggle('bottom', window.instant)">Bottom</button>
+</div>
+
+<!--CODE-->
+<script>
+$(function () {
+    var pstyle = 'border: 1px solid #dfdfdf; padding: 5px;';
+    $('#layout').w2layout({
+        name: 'layout',
+        panels: [
+            { type: 'top', size: 100, resizable: true, style: pstyle, content: 'top', title: 'hehe' },
+            { type: 'left', size: 200, resizable: true, style: pstyle, content: 'left' },
+            { type: 'main', style: 'background-color: white;', overflow: 'hidden' },
+            { type: 'preview', size: '50%', resizable: true, hidden: true, style: pstyle, content: 'preview' },
+            { type: 'right', size: 200, resizable: true, style: pstyle, content: 'right' },
+            { type: 'bottom', size: 50, resizable: true, hidden: true, style: pstyle, content: 'bottom' }
+        ]
+    });
+    var pstyle = 'background-color: #F0F0C1; border: 1px solid #dfdfdf; padding: 5px;';
+    $().w2layout({
+        name: 'layout2',
+        panels: [
+            { type: 'top', size: 40, resizable: true, style: pstyle, content: 'top' },
+            { type: 'left', size: 80, resizable: true, style: pstyle, content: 'left' },
+            { type: 'main', style: pstyle },
+            { type: 'preview', size: '50%', resizable: true, hidden: true, style: pstyle, content: 'preview' },
+            { type: 'right', size: 80, resizable: true, style: pstyle, content: 'right' },
+            { type: 'bottom', size: 40, resizable: true, hidden: true, style: pstyle, content: 'bottom' }
+        ]
+    });
+    
+    wd['layout'].content('main', wd['layout2']);
+});
+</script>

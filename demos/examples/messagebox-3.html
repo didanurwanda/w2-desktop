@@ -1,0 +1,32 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Prompt</h1>
+        Below is how to use the standard prompt dialog. <br />
+        For check callback, look at console.
+    </div>
+    <div id="example_view"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<button class="wd-btn" onclick="message1()">Open Prompt 1</button>
+<button class="wd-btn" onclick="message2()">Open Prompt 2</button>
+
+<!--CODE-->
+<script>
+function message1() {
+    $.MsgBox.prompt('Prompt Title', 'What is your name:', function(btn, val) {
+        console.log(btn, val);
+    });
+}
+
+function message2() {
+    $.MsgBox.prompt({
+        title: 'Propmt Title',
+        message: 'What is your name:',
+        fn: function(btn, val) {
+            console.log(btn, val);
+        }
+    });
+}
+</script>

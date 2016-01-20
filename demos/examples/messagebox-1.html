@@ -1,0 +1,38 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Sample Alert</h1>
+        Below is an example of using MessageBox Alert.
+    </div>
+    <div id="example_view"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<button class="wd-btn" onclick="message1()">Open Alert 1</button>
+<button class="wd-btn" onclick="message2()">Open Alert 2</button>
+<button class="wd-btn" onclick="message3()">Open Alert 3</button>
+
+<!--CODE-->
+<script>
+function message1() {
+    $.MsgBox.alert('Alert Title', 'Alert message !');
+}
+
+function message2() {
+    $.MsgBox.alert('Alert Title', 'Alert message !', function(btn) {
+        alert('Button "'+ btn +'" Clicked');
+        $.MsgBox.hide();
+    });
+}
+
+function message3() {
+    $.MsgBox.alert({
+        title: 'Alert Title',
+        message: 'Alert message',
+        fn: function(btn) {
+            console.log(btn +' clicked');
+            $.MsgBox.hide();
+        }
+    })
+}
+</script>

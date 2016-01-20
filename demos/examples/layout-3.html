@@ -1,0 +1,40 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Show/Hide Panels</h1>
+        A layout may be created with up to 6 panels. The panels can be visible or hidden when they are created, and can be shown or hidden
+        during run time with animation or without.
+    </div>
+    <div id="example_view" class="bg"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<div id="layout" style="width: 100%; height: 400px;"></div> 
+
+<div style="background: white">
+    <input type="checkbox" id="instant" onclick="window.instant = this.checked;"> <label for="instant">Instant</label>
+    <div style="height: 10px;"></div>
+    <button class="wd-btn" onclick="wd['layout'].toggle('top', window.instant)">Top</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('left', window.instant)">Left</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('right', window.instant)">Right</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('preview', window.instant)">Preview</button>
+    <button class="wd-btn" onclick="wd['layout'].toggle('bottom', window.instant)">Bottom</button>
+</div>
+
+<!--CODE-->
+<script>
+$(function () {    
+    var pstyle = 'padding: 5px;';
+    $('#layout').w2layout({
+        name: 'layout',
+        panels: [
+            { type: 'top', size: 100, resizable: true, style: pstyle, content: 'top', title: 'top' },
+            { type: 'left', size: 200, resizable: true, style: pstyle, content: 'left' },
+            { type: 'main', style: pstyle, content: 'main' },
+            { type: 'preview', size: '50%', resizable: true, hidden: true, style: pstyle, content: 'preview' },
+            { type: 'right', size: 200, resizable: true, hidden: true, style: pstyle, content: 'right' },
+            { type: 'bottom', size: 50, resizable: true, hidden: true, style: pstyle, content: 'bottom' }
+        ]
+    });
+});
+</script>

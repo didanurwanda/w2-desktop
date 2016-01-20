@@ -1,0 +1,39 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Customize Button</h1>
+        Below is how to use customize button on dialog.<br />
+        Support to all method MessageBox.
+    </div>
+    <div id="example_view"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<button class="wd-btn" onclick="message1()">Open Dialog 1</button>
+<button class="wd-btn" onclick="message2()">Open Dialog 2</button> 
+
+<!--CODE-->
+<script>
+function message1() {
+    $.MsgBox.alert({
+        title: 'Title',
+        message: 'Your message',
+        button: $.MsgBox.OK, // OK, YES, NO, CANCEL, OKCANCEL, YESNO, YESNOCANCEL
+        fn: function(btn) {
+            console.log(btn +' clicked');
+        }
+    });
+}
+
+function message2() {
+    $.MsgBox.alert({
+        title: 'Title',
+        message: 'Your message',
+        buttons: ['Ya', 'Tidak'],
+        fn: function(btn) {
+            console.log(btn +' clicked');
+        }
+    });
+}
+
+</script>

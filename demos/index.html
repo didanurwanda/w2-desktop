@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W2-desktop | Dida Nurwanda | www.didanurwanda.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../dist/w2-desktop-default.css" id="mainCSS" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="../libs/font-awesome/font-awesome.css" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css"/> 
+    <script type="text/javascript" src="../libs/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../dist/w2-desktop.js"></script>
+    <script type="text/javascript" src="code-mirror.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+    <style type="text/css">
+        .content {
+            background: white;
+        }
+        .bg_blue {
+            background-color: #3892d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-shadow" style="background:#fff;display:inline-block;padding:6px 8px;position:fixed;right:36px;top:0px;z-index:1000;border: 1px solid #dddddd; box-shadow: rgba(136, 136, 136, 0.6) 0 1px 3px;">
+        <label>Themes : </label>
+        <select style="width:100px;" id="theme">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+            <option value="bittersweet">Bittersweet</option>
+            <option value="lime">Lime</option>
+            <option value="mint">Mint</option>
+        </select>
+    </div>
+
+    <div id="main_layout"></div>
+
+    <script type="text/javascript">
+        $('#theme').on('change', function(e){ 
+            $('link[id=mainCSS]').attr('href', '../dist/w2-desktop-'+ $(this).val() +'.css');//css/'+e.value+'.css'); 
+        });
+    </script>
+
+</body>
+</html>

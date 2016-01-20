@@ -1,0 +1,33 @@
+<div class="content">
+    <div id="example_title">
+        <h1>Custom Dialog</h1>
+        Below is how to use customize dialog.<br />
+        Support to all method MessageBox.
+    </div>
+    <div id="example_view"></div>
+    <div id="example_code"></div>
+</div>
+
+<!--CODE-->
+<button class="wd-btn" onclick="message1()">Open Dialog</button>
+
+<!--CODE-->
+<script>
+function message1() {
+    $.MsgBox.show({
+        title: 'Title',
+        message: 'Your message',
+        width: 300,
+        height: 200,
+        button: null, // $.MsgBox.OK, YES, NO, CANCEL, OKCANCEL, YESNO, YESNOCANCEL
+        buttons: ['Ya', 'Tidak'], 
+        icon: $.MsgBox.INFO, // WARNING, QUESTION, ERROR
+        type: $.MsgBox.PROMPT, //MULTILINE
+        fn: function(btn, text) {
+            console.log(btn, text);
+        }
+    });
+}
+ 
+
+</script>
