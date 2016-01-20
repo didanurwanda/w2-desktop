@@ -220,9 +220,9 @@ $(function () {
                            '<html>\n'+
                            '<head>\n'+
                            '    <title>W2-desktop Demo: '+ node.text +'</title>\n'+
-                           '    <link rel="stylesheet" type="text/css" href="http://w2-desktop.didanurwanda.com/dist/w2-desktop.css" />\n'+
+                           '    <link rel="stylesheet" type="text/css" href="http://w2desktop.didanurwanda.com/dist/w2-desktop-default.css" />\n'+
                            '    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>\n'+
-                           '    <script type="text/javascript" src="http://w2-desktop.didanurwanda.com/dist/w2-desktop.js"></script>\n'+
+                           '    <script type="text/javascript" src="http://w2desktop.didanurwanda.com/dist/w2-desktop.js"></script>\n'+
                            '</head>\n'+
                            '<body>\n\n'+
                            html + '\n\n'+
@@ -246,7 +246,7 @@ $(function () {
                     '<div style="display: none">'+
                     '<form id="fiddleForm" target="_blank" action="http://jsfiddle.net/api/post/jquery/2.1/" method="post">'+
                     '    <textarea name="title">W2-desktop Demo: '+ node.text +'</textarea>'+
-                    '    <textarea name="resources">http://w2-desktop.didanurwanda.com/dist/w2-desktop.js,http://w2-desktop.didanurwanda.com/dist/w2-desktop.css</textarea>'+
+                    '    <textarea name="resources">http://w2desktop.didanurwanda.com/dist/w2-desktop.js,http://w2desktop.didanurwanda.com/dist/w2-desktop-default.css</textarea>'+
                     '    <textarea name="html">'+ html.replace(/<textarea/gi, '&lt;textarea').replace(/<\/textarea>/gi, '&lt;/textarea&gt;') +'</textarea>'+
                     '    <textarea name="js">'+ js +'</textarea>'+
                     '    <textarea name="css">'+ css +'</textarea>'+
