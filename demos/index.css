@@ -53,6 +53,7 @@ p + p {
     border: 0px;
     background-color: #efefef;
     line-height: 150%;
+    font-weight: normal;
 }
 
 .btn-source {
@@ -98,6 +99,7 @@ p + p {
     box-sizing: content-box;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
+    font-weight: normal;
 }
 
 .CodeMirror-lines {
