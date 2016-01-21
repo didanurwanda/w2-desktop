@@ -1,0 +1,127 @@
+<h3>Message Overview</h3>
+
+The w2message object allows you to create message box dialogs. To use, w2message made with the global method, so you can use it with <span class="property">$.MsgBox.show(options)</span> or <span class="property">$().w2message.show(options)</span>.
+
+<div style="height: 10px"></div>
+A mask can be created in any of the following ways:
+
+<br />
+<h4>Alert</h4>
+<textarea class="javascript">
+$.MsgBox.alert('Alert Title', 'Alert message !', function(btn) {
+    alert('Button "'+ btn +'" Clicked');
+    $.MsgBox.hide();
+});
+</textarea>
+
+or
+
+<textarea class="javascript">
+$.MsgBox.alert({
+    title: 'Alert Title',
+    message: 'Alert message',
+    fn: function(btn) {
+        console.log(btn +' clicked');
+        $.MsgBox.hide();
+    }
+});
+</textarea>
+
+<br />
+
+<h4>Confirm</h4>
+<textarea class="javascript">
+$.MsgBox.confirm('Confirm Title', 'Confirm message ?', function(btn) {
+    console.log(btn +' clicked');
+});
+</textarea>
+
+or
+
+<textarea class="javascript">
+$.MsgBox.confirm({
+    title: 'Confirm Title',
+    message: 'Confirm message ?',
+    fn: function(btn) {
+        console.log(btn +' clicked');
+    }
+});
+</textarea>
+
+<br />
+
+<h4>Prompt</h4>
+<textarea class="javascript">
+$.MsgBox.prompt('Prompt Title', 'What is your name:', function(btn, val) {
+    console.log(btn, val);
+});
+</textarea>
+
+or
+
+<textarea class="javascript">
+$.MsgBox.prompt({
+    title: 'Propmt Title',
+    message: 'What is your name:',
+    fn: function(btn, val) {
+        console.log(btn, val);
+    }
+});
+</textarea>
+
+<h4>Prompt Multiline</h4>
+
+<textarea class="javascript">
+$.MsgBox.multiline('Prompt Title', 'Please enter your address:', function(btn, val) {
+    console.log(btn, val);
+});
+</textarea>
+
+or 
+
+<textarea class="javascript">
+$.MsgBox.multiline({
+    title: 'Prompt Title',
+    message: 'Please enter your address',
+    fn: function(btn, val) {
+        console.log(btn, val);
+    }
+}); 
+</textarea>
+
+<h4>Complete Mode</h4>
+
+<textarea class="javascript">
+$.MsgBox.show({
+    title: 'Title',
+    message: 'Your message',
+    width: 300,
+    height: 200,
+    button: null, // $.MsgBox.OK, YES, NO, CANCEL, OKCANCEL, YESNO, YESNOCANCEL
+    buttons: ['Ya', 'Tidak'], 
+    icon: $.MsgBox.INFO, // WARNING, QUESTION, ERROR
+    type: $.MsgBox.PROMPT, //MULTILINE
+    fn: function(btn, text) {
+        console.log(btn, text);
+    }
+});
+</textarea>
+
+
+<h3>Options</h3>
+
+You can pass a map of following properties to the constructor of the dialog :
+<textarea class="javascript">
+options: {
+	title    : '',
+    message  : '',
+    fn       : null,
+	button   : 						// default button ( $.MsgBox.OK, YES, NO, CANCEL, OKCANCEL, YESNO, YESNOCANCEL )
+	buttons  : 						// custom button ['iya', 'tidak']
+	width    : 300,					// width in px
+	height   : 150,					// height in px
+	icon     : '',					// $.MsgBox.QUESTION, ERROR, INFO, WARNING
+    type     : $.MsgBox.MESSAGE,	// type dialog ( $.MsgBox.MESSAGE, PROMPT, MULTILINE )		
+}
+</textarea>
+

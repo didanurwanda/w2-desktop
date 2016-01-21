@@ -1,0 +1,41 @@
+Removes nodes from the tree.
+
+<div class="definition">
+    remove(id1, id2, ...)
+</div>
+
+<div class="arguments">
+    <table>
+    <tr>
+        <td>id</td>
+        <td><b>string</b>, id of the tree node</td>
+    </tr>
+    </table>
+</div>
+
+Returns integer.
+
+<h4>Description</h4>
+
+Removes a tree node or nodes from the <a class="method" href="w2tree.nodes">.nodes</a> array and refreshes the tree. 
+The tree node is identified by the <span class="property">.id</span> property. 
+it will search the entire tree
+including all its nested nodes. The method returns the number of nodes it removes.
+<div style="height: 10px"></div>
+
+If you have tree defined in the following way:
+<textarea class="javascript">
+$('#tree').w2tree({
+    name : 'tree',
+    nodes: [ 
+        { id: 'id-1', text: 'Level 1' },
+        { id: 'id-2', text: 'Level 2' },
+        { id: 'id-3', text: 'Level 3' }
+    ]
+});
+</textarea>
+
+You can:
+<textarea class="javascript">
+ wd['tree'].remove('id-1', 'id-3');
+</textarea>

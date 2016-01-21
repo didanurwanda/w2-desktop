@@ -1,0 +1,40 @@
+Called when button is clicked.
+
+<div class="definition">
+    fn = function(btn)
+</div>
+
+or 
+
+<div class="definition">
+    fn = function(btn, text)
+</div>
+
+You can add event listener during the object creation:
+
+<textarea class="javascript">
+$.MsgBox.show({
+    title: 'Question Title',
+    message: 'Are you sure want to quit?',
+    icon: $.MsgBox.QUESTION,
+    button: $.MsgBox.YESNO,
+    fn: function(btn) {
+        console.log(btn +' clicked');
+    }
+});
+</textarea>
+
+or 
+
+<textarea class="javascript">
+$.MsgBox.show({
+    title: 'Question Title',
+    message: 'What is your name?',
+    button: $.MsgBox.YESNO,
+    type: $.MsgBox.PROMPT,
+    fn: function(btn, text) {
+        console.log(btn, text);
+    }
+});
+</textarea>
+  

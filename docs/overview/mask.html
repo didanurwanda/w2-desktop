@@ -1,0 +1,26 @@
+<h3>Mask Overview</h3>
+w2mask plugin can mask DOM elements while their content is loading or changing to prevent user interactions and inform that some background task is still running.
+
+<div style="height: 10px"></div>
+A mask can be created in any of the following ways:
+
+<textarea class="javascript">
+$('#target').w2mask('Your message...');
+</textarea>
+
+Unmasking <br />
+To remove a previously displayed mask from an element (or multiple elements) call unmask() without any parameters:
+
+<textarea class="javascript">
+$('#target').w2unmask();
+</textarea>
+
+
+Checking if an element is masked<br />
+You can use w2isMasked() method on a single element to check if it is currently masked. Please note that this method will return false while mask is delayed.
+
+<textarea class="javascript">
+if( $("#target").w2isMasked() ) {
+    // your logic
+}
+</textarea>

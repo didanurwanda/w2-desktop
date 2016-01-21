@@ -1,0 +1,40 @@
+Scroll nodes into view
+
+<div class="definition">
+    scrollIntoView([id])
+</div>
+
+<div class="arguments">
+    <table>
+    <tr>
+        <td>id</td>
+        <td><b>string</b>, <i>optional</i>, id of the tree node</td>
+    </tr>
+    </table>
+</div>
+
+Returns <i>undefined</i>.
+
+<h4>Description</h4>
+
+This method will scroll node with id = <span class="property">id</span> into view. If no node specified, then selected node will be 
+scrolled into view. The tree node is identified by the <span class="property">.id</span> property. 
+it will search the entire tree including all its nested nodes. The method returns the number of nodes it removes.
+<div style="height: 10px"></div>
+
+If you have tree defined in the following way:
+<textarea class="javascript">
+$('#tree').w2tree({
+    name : 'tree',
+    nodes: [ 
+        { id: 'id-1', text: 'Level 1' },
+        { id: 'id-2', text: 'Level 2' },
+        { id: 'id-3', text: 'Level 3' }
+    ]
+});
+</textarea>
+
+You can:
+<textarea class="javascript">
+ wd['tree'].scrollInfoView('id-1);
+</textarea>

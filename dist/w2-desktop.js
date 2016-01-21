@@ -17539,7 +17539,7 @@ var w2confirm = function (msg, title, callBack) {
     /**
      * Checks if a single element is masked. Returns false if mask is delayed or not displayed. 
      */
-    $.fn.isMasked = function(){
+    $.fn.w2isMasked = function(){
         return this.hasClass("wd-masked");
     };
 
@@ -17551,7 +17551,7 @@ var w2confirm = function (msg, title, callBack) {
             element.removeData("_mask_timeout");
         }
 
-        if(element.isMasked()) {
+        if(element.w2isMasked()) {
             $.unmaskElement(element);
         }
         
@@ -17607,8 +17607,7 @@ var w2confirm = function (msg, title, callBack) {
 
 
 (function($) {
-    
-    
+        
     $.MsgBox = {
         OK          : 1,
         YES         : 2,
@@ -17625,6 +17624,7 @@ var w2confirm = function (msg, title, callBack) {
 
         PROMPT      : 'prompt',
         MULTILINE   : 'multiline',
+        MESSAGE     : '',
 
         _calback    : null,
 
@@ -17718,7 +17718,7 @@ var w2confirm = function (msg, title, callBack) {
                 width    : 300,
                 height   : 150,
                 icon     : '',
-                type     : '',
+                type     : this.MESSAGE,
             };
             var setting     = $.extend({}, defaults, options);
 
@@ -17831,5 +17831,7 @@ var w2confirm = function (msg, title, callBack) {
         }
 
     };
+
+    $.fn.w2message = $.MsgBox;
 
 })(jQuery);

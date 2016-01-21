@@ -1,0 +1,31 @@
+Unlocks the tree.
+
+<div class="definition">
+    unlock()
+</div>
+
+Returns <i>undefined</i>.
+
+<h4>Description</h4>
+
+This method will unlock the tree previously locked with <a href="w2tree.lock" class="method">.lock()</a> method. This method will call
+<a href="w2utils.unlock" class="method">w2utils.unlock()</a> to perform the action.
+<div style="height: 10px"></div>
+                
+If you have following tree:
+<textarea class="javascript">
+$('#tree').w2tree({
+    name : 'tree',
+    img  : 'icon-page',
+    nodes: [ 
+        { id: 'id-1', text: 'Level 1' },
+        { id: 'id-2', text: 'Level 2' },
+        { id: 'id-3', text: 'Level 3' }
+    ]
+});
+</textarea>
+
+And if the tree is locked, you can unlock it by
+<textarea class="javascript">
+ wd.tree.unlock();
+</textarea>
